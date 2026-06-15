@@ -1355,12 +1355,19 @@ def render_app() -> None:
         st.rerun()
 
     with st.sidebar:
-        st.markdown('<div class="brand">Dental CRM</div>', unsafe_allow_html=True)
-        st.write(f"**{user['full_name']}**")
-        st.caption(f"{user['role'].title()} | {user['clinic_name']}")
-        if st.button("Logout", use_container_width=True):
-            del st.session_state.user_id
-            st.rerun()
+    st.image("assets/Vinayak-logo.jpg", width=180)
+
+    st.markdown(
+        '<div class="brand">VDL Dental CRM</div>',
+        unsafe_allow_html=True
+    )
+
+    st.write(f"**{user['full_name']}**")
+    st.caption(f"{user['role'].title()} | {user['clinic_name']}")
+
+    if st.button("Logout", use_container_width=True):
+        del st.session_state.user_id
+        st.rerun()
 
         if user["role"] == "admin":
             pages = [
