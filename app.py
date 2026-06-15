@@ -1354,8 +1354,12 @@ def render_app() -> None:
         del st.session_state.user_id
         st.rerun()
 
-    with st.sidebar:
-        st.image("assets/vinayak-logo.jpg", width=180)
+   from pathlib import Path
+
+LOGO = Path(__file__).parent / "assets" / "vinayak-logo.jpg"
+
+with st.sidebar:
+    st.image(str(LOGO), width=180)
 
     st.markdown(
         '<div class="brand">VDL Dental CRM</div>',
@@ -1368,7 +1372,7 @@ def render_app() -> None:
     if st.button("Logout", use_container_width=True):
         del st.session_state.user_id
         st.rerun()
-
+        
         if user["role"] == "admin":
             pages = [
                 "Dashboard",
