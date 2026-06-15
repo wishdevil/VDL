@@ -1359,10 +1359,8 @@ def render_app() -> None:
 LOGO = Path(__file__).parent / "assets" / "vinayak-logo.jpg"
 
 with st.sidebar:
-    st.image(str(LOGO), width=180)
-
     st.markdown(
-        '<div class="brand">VDL Dental CRM</div>',
+        '<div class="brand">Dental CRM</div>',
         unsafe_allow_html=True
     )
 
@@ -1370,7 +1368,7 @@ with st.sidebar:
     st.caption(f"{user['role'].title()} | {user['clinic_name']}")
 
     if st.button("Logout", use_container_width=True):
-        del st.session_state.user_id
+        del st.session_state["user_id"]
         st.rerun()
         
         if user["role"] == "admin":
