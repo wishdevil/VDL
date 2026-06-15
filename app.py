@@ -1355,7 +1355,7 @@ def render_app() -> None:
         st.rerun()
 
     with st.sidebar:
-        st.image("assets/Vinayak-logo.jpg", width=180)
+        st.image("assets/vinayak-logo.jpg", width=180)
 
     st.markdown(
         '<div class="brand">VDL Dental CRM</div>',
