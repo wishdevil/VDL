@@ -736,6 +736,7 @@ def orders_table(doctor_id: int | None = None) -> pd.DataFrame:
 
 
 def login_page() -> None:
+    st.image("assets/vinayak-logo.jpg", width=250)
     st.markdown('<div class="brand">Dental CRM</div>', unsafe_allow_html=True)
     st.caption("Laboratory orders, files, invoices, and payments in one place.")
     login_tab, signup_tab = st.tabs(["Login", "Doctor signup"])
